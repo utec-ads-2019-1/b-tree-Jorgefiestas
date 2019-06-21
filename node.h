@@ -129,7 +129,7 @@ class Node {
 
             }
             else{
-                if(children[idx]->size < (capacity - 1)/2){
+                if(children[idx]->size < (capacity + 1)/2){
                    fillNode(idx);
                 }
 
@@ -225,12 +225,12 @@ class Node {
 
             keys[idx] = toBorrow->keys[0];
 
-            for(int i = 1; i < current->size; i++){
+            for(int i = 1; i < toBorrow->size; i++){
                 toBorrow->keys[i - 1] = toBorrow->keys[i];
             }
 
             if(current->isLeaf == false){
-                for(int i = 1; i < current->size + 1; i++){
+                for(int i = 1; i < toBorrow->size + 1; i++){
                     toBorrow->children[i - 1] = toBorrow->children[i];
                 }
             }
@@ -261,7 +261,7 @@ class Node {
                 keys[i] = keys[i + 1];
             }
 
-            for(int i = idx + 1; i < size - 1; i++){
+            for(int i = idx + 1; i < size; i++){
                 children[i] = children[i + 1];
             }
 

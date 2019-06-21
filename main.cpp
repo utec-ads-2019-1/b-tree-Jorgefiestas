@@ -11,10 +11,9 @@ int main(int argc, char *argv[]) {
         btree.insert(i, i);
 
     btree.print();
-    
-    btree.remove(23);
 
-    btree.print();
+    for(int i = 0; i < 50; i++)
+        btree.remove(i), btree.print();
 
     return EXIT_SUCCESS;
 }
